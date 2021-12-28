@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout::layout_header(~{::title})">
+    <title>View News</title>
+    <link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+</head>
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    font-size: 14px;
+}
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+    .table td, .table th {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+    th {
+        text-align: inherit;
+    }
+div#news-data-table_filter,
+div#news-data-table_paginate {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+div#news-data-table_length,
+div#news-data-table_info {
+    width: 50%;
+    float: left;
+}
+</style>
+<body>
+
+
+<div class="row">
+    <h2>Welcome to cricket news </h2>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12" id="news-data-table-div">
+                <table id="news-data-table" class="table table-hover table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/scripts/viewNews.js}"></script>
+<script>
+
+    $(document).ready(function () {
+        loadTable();
+            })
+</script>
+
+</body>
+</html>
